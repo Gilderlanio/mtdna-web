@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>mtDNA-Cancer Network</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Futura;
+            font-size: 12pt;
+            float: left;
+        }
+
+        svg {
+            width: 690px;
+            height: 640px;
+            font-size: 7pt;
+            font-family: Futura;
+        }
+
+        .links line {
+            font-family: Futura;
+            stroke: #aaa;
+        }
+
+        .nodes circle {
+            font-family: Futura;
+            font-size: 7pt;
+            pointer-events: all;
+        }
+
+
+
+    </style>
+
+
+</head>
+
+
+<body class="d-flex justify-content-center">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.html"><img src="static/logo.png" style="width: 70px;height: 40px"></a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="network">Network</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="tables">Raw data</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main" class="container" style="padding-top: 80px">
+
+
+    <div class="starter-template" style="background-color: #d3d9df; height:685px">
+
+        <div class="col">
+
+            The mtDNA mutation-cancer network is interactive.
+            Use these controls to adjust node and edges for better visualization.
+
+            <hr/>
+
+        </div>
+
+        <div class="col">
+
+                    <p><label>Center network (x, y)</label></p>
+                    <label> x :
+                        <output id="center_XSliderOutput">.5</output>
+                        <input type="range" min="0" max="1" value=".5" step="0.01"
+                               oninput="d3.select('#center_XSliderOutput').text(value); forceProperties.center.x=value; updateAll();">
+                    </label>
+                    <label>
+                        y :
+                        <output id="center_YSliderOutput">.5</output>
+                        <input type="range" min="0" max="1" value=".5" step="0.01"
+                               oninput="d3.select('#center_YSliderOutput').text(value); forceProperties.center.y=value; updateAll();">
+                    </label>
+        </div>
+
+        <div class="col">
+            <p><label><input type="checkbox" checked onchange="forceProperties.charge.enabled = this.checked; updateAll();">
+                </label> Attracts (+) or repels (-) nodes to/from each other.</p>
+            <label title="Negative strength repels nodes. Positive strength attracts nodes.">
+                Strength :
+                <output id="charge_StrengthSliderOutput">-30</output>
+                <br/>
+                <input type="range" min="-200" max="50" value="-30" step=".1"
+                       oninput="d3.select('#charge_StrengthSliderOutput').text(value); forceProperties.charge.strength=value; updateAll();">
+            </label>
+            <label title="Minimum distance where force is applied">
+                Minimum distance :
+                <output id="charge_distanceMinSliderOutput">1</output>
+                <br/>
+                <input type="range" min="0" max="50" value="1" step=".1"
+                       oninput="d3.select('#charge_distanceMinSliderOutput').text(value); forceProperties.charge.distanceMin=value; updateAll();">
+            </label>
+            <label title="Maximum distance where force is applied">
+                Maximum distance :
+                <output id="charge_distanceMaxSliderOutput">2000</output>
+                <br/>
+                <input type="range" min="0" max="2000" value="2000" step=".1"
+                       oninput="d3.select('#charge_distanceMaxSliderOutput').text(value); forceProperties.charge.distanceMax=value; updateAll();">
+            </label>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col">
+                <p><label><input type="checkbox" checked
+                                 onchange="forceProperties.collide.enabled = this.checked; updateAll();">
+                    Collide</label> Prevents nodes from overlapping</p>
+                <label>
+                    Strength :
+                    <output id="collide_StrengthSliderOutput">.7</output>
+                    <br/>
+                    <input type="range" min="0" max="2" value=".7" step=".1"
+                           oninput="d3.select('#collide_StrengthSliderOutput').text(value); forceProperties.collide.strength=value; updateAll();">
+                </label>
+                <label title="Size of nodes">
+                    Radius :
+                    <output id="collide_radiusSliderOutput">5</output>
+                    <br/>
+                    <input type="range" min="0" max="100" value="5" step="1"
+                           oninput="d3.select('#collide_radiusSliderOutput').text(value); forceProperties.collide.radius=value; updateAll();">
+                </label>
+                <label title="Higher values increase rigidity of the nodes (WARNING: high values are computationally expensive)">
+                    Iterations :
+                    <output id="collide_iterationsSliderOutput">1</output>
+                    <br/>
+                    <input type="range" min="1" max="10" value="1" step="1"
+                           oninput="d3.select('#collide_iterationsSliderOutput').text(value); forceProperties.collide.iterations=value; updateAll();">
+                </label>
+        </div>
+
+        <div class="col">
+            <p><label><input type="checkbox" checked
+                             onchange="forceProperties.link.enabled = this.checked; updateAll();">
+                link</label> Sets link length</p>
+            <label title="The force will push/pull nodes to make links this long">
+                Distance :
+                <output id="link_DistanceSliderOutput">30</output>
+                <br/>
+                <input type="range" min="0" max="100" value="30" step="1"
+                       oninput="d3.select('#link_DistanceSliderOutput').text(value); forceProperties.link.distance=value; updateAll();">
+            </label>
+            <label title="Higher values increase rigidity of the links (WARNING: high values are computationally expensive)">
+                Iterations :
+                <output id="link_IterationsSliderOutput">1</output>
+                <br/>
+                <input type="range" min="1" max="10" value="1" step="1"
+                       oninput="d3.select('#link_IterationsSliderOutput').text(value); forceProperties.link.iterations=value; updateAll();">
+            </label>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div id="network" style="border: solid #d3d9df; border-radius: 2px; height:685px; width:690px">
+        <button class="btn btn-light" id='saveButton'>Export</button>
+        <svg id="svg_div"></svg>
+    </div>
+
+
+</main>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
+<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+<script src="static/js/d3-save-svg.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="static/code.js"></script>
+
+
+</body>
+
+</html>

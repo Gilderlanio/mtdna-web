@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.html"><img src="static/logo.png" style="width: 70px;height: 40px"></a>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="network">Network</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Raw data</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+
+
+        <div class="panel-group">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">Mutations by cancer type.</div>
+
+
+
+                <div class="panel-body">
+
+                    <table id="mutations_table" class="display">
+                        <thead>
+                        <tr>
+                            <th>Cancer Type</th>
+                            <th>Number of mutations</th>
+                            <th>List of mutations</th>
+                        </tr>
+                        </thead>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">Overlap of mutations between pairs of cancer types.</div>
+
+                <div class="panel-body">
+
+                    <table id="overlap_table" class="display">
+                        <thead>
+                        <tr>
+                            <th>Cancer Type 1</th>
+                            <th>Cancer Type 2</th>
+                            <th>Jaccard Index</th>
+                            <th>Number of mutations</th>
+                            <th>Overlap p-value</th>
+                            <th>Mutations</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"/>
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css"/>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+
+<script>
+
+    $('#mutations_table').DataTable({
+
+        ajax: "static/data/mutation_mtdna_datatable.json",
+        dom: 'Bfrtip',
+        buttons: ['copy', 'excel', 'csv', 'pdf'],
+        columns: [ { "width": "20%" }, { "width": "20%" }, null]
+
+    });
+
+    $('#overlap_table').DataTable( {
+            "ajax": "static/data/overlap_mtdna_datatable.json",
+            dom: 'Bfrtip',
+            buttons: ['copy', 'excel', 'csv', 'pdf'],
+            columns: [ { "width": "20%" }, { "width": "20%" }, null, null, null, null]
+
+    });
+
+</script>
+
+</body>
+
+</html>

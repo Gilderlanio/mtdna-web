@@ -1,0 +1,88 @@
+ColoRect-AdenoCA	GC	0.031	2	0.0	13650 | 2706
+ColoRect-AdenoCA	Head-SCC	0.250	1	1.0	13650
+Head-SCC	CNS-Medullo	0.200	1	0.88	16519
+Head-SCC	Liver-HCC	0.100	1	0.5	16519
+Head-SCC	Breast-AdenoCA	0.167	1	0.98	7028
+Head-SCC	GC	0.046	3	0.13	13650 | 16519 | 7028
+Kidney-RCC	SoftTissue-Leiomyo	0.125	1	0.99	16527
+Kidney-RCC	Stomach-AdenoCA	0.125	1	1.0	16311
+Kidney-RCC	Eso-AdenoCA	0.300	3	1.0	11914 | 16111 | 16311
+Kidney-RCC	Prost-AdenoCA	0.143	2	0.73	11914 | 16111
+Kidney-RCC	Panc-AdenoCA	0.167	2	0.82	11914 | 16111
+Kidney-RCC	Lymph-BNHL	0.091	1	0.98	11914
+Kidney-RCC	Liver-HCC	0.455	5	1.0	10810 | 11914 | 12705 | 16111 | 16527
+Kidney-RCC	Cervix-SCC	0.125	1	1.0	11914
+Kidney-RCC	GC	0.123	8	0.0	10810 | 11914 | 12705 | 14178 | 16111 | 16311 | 16527 | 9545
+Kidney-RCC	Panc-Endocrine	0.111	1	0.96	16527
+Kidney-RCC	Ovary-AdenoCA	0.200	2	0.5	11914 | 16111
+Cervix-SCC	Eso-AdenoCA	0.200	1	1.0	11914
+Cervix-SCC	Prost-AdenoCA	0.125	1	1.0	11914
+Cervix-SCC	Panc-AdenoCA	0.167	1	1.0	11914
+Cervix-SCC	Lymph-BNHL	0.250	1	1.0	11914
+Cervix-SCC	Liver-HCC	0.125	1	1.0	11914
+Cervix-SCC	GC	0.015	1	0.0	11914
+Cervix-SCC	Ovary-AdenoCA	0.250	1	0.5	11914
+Uterus-AdenoCA	Eso-AdenoCA	0.143	1	0.97	16093
+Uterus-AdenoCA	Kidney-ChRCC	0.200	1	0.5	16189
+Uterus-AdenoCA	Prost-AdenoCA	0.100	1	0.74	16189
+Uterus-AdenoCA	Lymph-BNHL	0.400	2	1.0	14560 | 16189
+Uterus-AdenoCA	Liver-HCC	0.100	1	0.87	14560
+Uterus-AdenoCA	Breast-AdenoCA	0.167	1	0.72	16189
+Uterus-AdenoCA	GC	0.046	3	0.0	14560 | 16093 | 16189
+Uterus-AdenoCA	Ovary-AdenoCA	0.400	2	1.0	14560 | 16189
+CNS-Medullo	GC	0.046	3	0.13	10873 | 16360 | 16519
+CNS-Medullo	Liver-HCC	0.222	2	1.0	16360 | 16519
+CNS-Oligo	GC	0.015	1	0.0	16223
+CNS-Oligo	Thy-AdenoCA	0.333	1	0.88	16223
+CNS-Oligo	Eso-AdenoCA	0.200	1	0.5	16223
+Stomach-AdenoCA	GC	0.015	1	0.0	16311
+Stomach-AdenoCA	Eso-AdenoCA	0.200	1	1.0	16311
+Eso-AdenoCA	Prost-AdenoCA	0.182	2	1.0	11914 | 16111
+Eso-AdenoCA	Thy-AdenoCA	0.143	1	0.97	16223
+Eso-AdenoCA	Panc-AdenoCA	0.222	2	1.0	11914 | 16111
+Eso-AdenoCA	Lymph-BNHL	0.125	1	0.93	11914
+Eso-AdenoCA	Liver-HCC	0.182	2	1.0	11914 | 16111
+Eso-AdenoCA	GC	0.077	5	0.0	11914 | 16093 | 16111 | 16223 | 16311
+Eso-AdenoCA	Ovary-AdenoCA	0.286	2	1.0	11914 | 16111
+Kidney-ChRCC	Prost-AdenoCA	0.100	1	0.69	16189
+Kidney-ChRCC	Thy-AdenoCA	0.200	1	0.75	16129
+Kidney-ChRCC	Panc-AdenoCA	0.125	1	1.0	16129
+Kidney-ChRCC	Lymph-BNHL	0.167	1	1.0	16189
+Kidney-ChRCC	Breast-AdenoCA	0.167	1	1.0	16189
+Kidney-ChRCC	GC	0.046	3	0.0	16129 | 16189 | 8584
+Kidney-ChRCC	Ovary-AdenoCA	0.167	1	0.94	16189
+Lung-SCC	GC	0.015	1	0.07	11719
+Liver-HCC	SoftTissue-Leiomyo	0.125	1	0.82	16527
+Liver-HCC	Prost-AdenoCA	0.143	2	0.99	11914 | 16111
+Liver-HCC	Panc-AdenoCA	0.167	2	1.0	11914 | 16111
+Liver-HCC	Lymph-BNHL	0.200	2	0.49	11914 | 14560
+Liver-HCC	GC	0.123	8	0.02	10810 | 11914 | 12705 | 14560 | 16111 | 16360 | 16519 | 16527
+Liver-HCC	Panc-Endocrine	0.111	1	0.97	16527
+Liver-HCC	Ovary-AdenoCA	0.333	3	1.0	11914 | 14560 | 16111
+Lymph-CLL	GC	0.031	2	0.0	16327 | 3594
+Lymph-CLL	Prost-AdenoCA	0.111	1	0.44	16327
+Lymph-CLL	Panc-AdenoCA	0.143	1	0.88	16327
+Lymph-BNHL	Prost-AdenoCA	0.200	2	0.97	11914 | 16189
+Lymph-BNHL	Thy-AdenoCA	0.167	1	0.88	3666
+Lymph-BNHL	Panc-AdenoCA	0.111	1	0.74	11914
+Lymph-BNHL	Breast-AdenoCA	0.143	1	0.5	16189
+Lymph-BNHL	GC	0.062	4	0.0	11914 | 14560 | 16189 | 3666
+Lymph-BNHL	Panc-Endocrine	0.200	1	0.74	3666
+Lymph-BNHL	Ovary-AdenoCA	0.600	3	1.0	11914 | 14560 | 16189
+Breast-LobularCA	GC	0.015	1	0.0	489
+Breast-AdenoCA	Prost-AdenoCA	0.333	3	1.0	16189 | 16278 | 73
+Breast-AdenoCA	Panc-AdenoCA	0.111	1	0.87	16278
+Breast-AdenoCA	GC	0.062	4	0.0	16189 | 16278 | 7028 | 73
+Breast-AdenoCA	Ovary-AdenoCA	0.143	1	0.49	16189
+Panc-Endocrine	SoftTissue-Leiomyo	0.500	1	1.0	16527
+Panc-Endocrine	Thy-AdenoCA	0.250	1	1.0	3666
+Panc-Endocrine	GC	0.031	2	0.0	16527 | 3666
+SoftTissue-Leiomyo	GC	0.015	1	0.0	16527
+Prost-AdenoCA	Panc-AdenoCA	0.400	4	1.0	11914 | 16111 | 16278 | 16327
+Prost-AdenoCA	GC	0.123	8	0.0	11914 | 13789 | 1438 | 16111 | 16189 | 16278 | 16327 | 73
+Prost-AdenoCA	Ovary-AdenoCA	0.333	3	1.0	11914 | 16111 | 16189
+Thy-AdenoCA	Panc-AdenoCA	0.125	1	0.74	16129
+Thy-AdenoCA	GC	0.046	3	0.0	16129 | 16223 | 3666
+Panc-AdenoCA	GC	0.092	6	0.51	11914 | 15043 | 16111 | 16129 | 16278 | 16327
+Panc-AdenoCA	Ovary-AdenoCA	0.250	2	0.99	11914 | 16111
+GC	Ovary-AdenoCA	0.062	4	0.0	11914 | 14560 | 16111 | 16189
